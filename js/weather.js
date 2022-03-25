@@ -14,9 +14,12 @@ WIDGET = {
     "shadow": "1",
     "language": "auto",
     "borderRadius": "5",
-    "fixed": "false",
+    "fixed": "true",
     "vertical": "top",
     "horizontal": "left",
-    "key": "50c653f7ea3b4f07b29e8eda94f47d63"
+    "city": "CN101010100",
+    "left": "80",
+    "top": "10",
+    "key": "5d7e008fb2234d9fa22899043632a1e8"
   }
 }
