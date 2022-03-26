@@ -62,9 +62,9 @@ svg.icon {
   font-family: "iconfont"; /* Project id 3277826 */
   /* Color fonts */
   src:
-       url('iconfont.woff2?t=1648282124042') format('woff2'),
-       url('iconfont.woff?t=1648282124042') format('woff'),
-       url('iconfont.ttf?t=1648282124042') format('truetype');
+       url('/fonts/iconfont.woff2?t=1648282124042') format('woff2'),
+       url('/fonts/iconfont.woff?t=1648282124042') format('woff'),
+       url('/fonts/iconfont.ttf?t=1648282124042') format('truetype');
 }
 
 .iconfont {
