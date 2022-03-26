@@ -9,6 +9,7 @@ svg.icon.festival-decoration {
     -webkit-animation: sway 1s infinite ease-in-out alternate;
     animation: sway 1s infinite ease-in-out alternate;
 }
+
 @-webkit-keyframes sway {
   0% {
     -webkit-transform: rotate(20deg);
@@ -55,4 +56,45 @@ svg.icon {
    vertical-align: -0.15em;
    fill: currentColor;
    overflow: hidden;
+}
+
+@font-face {
+  font-family: "iconfont"; /* Project id 3277826 */
+  /* Color fonts */
+  src:
+       url('iconfont.woff2?t=1648282124042') format('woff2'),
+       url('iconfont.woff?t=1648282124042') format('woff'),
+       url('iconfont.ttf?t=1648282124042') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youxishoubing:before {
+  content: "\e631";
+}
+
+.icon-csdn:before {
+  content: "\e638";
+}
+
+.icon-shejiaotubiao-46:before {
+  content: "\e64b";
+}
+
+.icon-weixin:before {
+  content: "\e607";
+}
+
+.icon-bilibili:before {
+  content: "\e609";
+}
+
+.icon-juejin:before {
+  content: "\e60b";
 }
