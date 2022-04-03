@@ -98,3 +98,13 @@ svg.icon {
 .icon-juejin:before {
   content: "\e60b";
 }
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  right: -66px !important;
+  /* 默认情况下缩进左侧66px，只留一点箭头部分 */
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  right: 0 !important;
+  /* 鼠标悬停是左侧缩进归零，完全显示按钮 */
+}
