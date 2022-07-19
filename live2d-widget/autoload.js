@@ -42,12 +42,6 @@ if (screen.width >= 768) {
 // API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
 // 初始化看板娘会自动加载指定目录下的 waifu-tips.json
 
-import { quotes } from "https://haiyong.site/js/quotes.js";
-let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-console.log(
-  `%c✨ ${randomQuote}`,
-  "font-size:20px; background:#FFF; color:#581845;padding:10px; border: 3px solid #581845;border-radius:10px;"
-);
 
 console.log(`
   く__,.ヘヽ.        /  ,ー､ 〉
@@ -68,3 +62,11 @@ console.log(`
                   ﾄ-,/  |___./
                   'ｰ'    !_,.:
 `);
+
+
+import { quotes } from "https://haiyong.site/js/quotes.js";
+let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+console.log(
+  `%c✨ ${randomQuote}`,
+  "font-size:20px; background:#FFF; color:#581845;padding:10px; border: 3px solid #581845;border-radius:10px;"
+);
