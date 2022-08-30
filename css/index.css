@@ -5032,7 +5032,7 @@ mjx-container[display],
   float: left;
   overflow: hidden;
   margin: 6px 4px;
-  width: calc(25% - 8px);
+  width: calc(15% - 8px);
   height: 125px;
   border-radius: 8px;
   background: #000;
