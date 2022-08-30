@@ -5033,7 +5033,7 @@ mjx-container[display],
   overflow: hidden;
   margin: 6px 4px;
   width: calc(25% - 8px);
-  height: 125px;
+  height: 180px;
   border-radius: 8px;
   background: #000;
   -webkit-transform: translate3d(0, 0, 0);
