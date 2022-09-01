@@ -53,3 +53,7 @@
     padding: 0.5rem 0;
     user-select: none;
 }
+#our-company span {
+    margin: 0 .25rem;
+    vertical-align: middle;
+}
