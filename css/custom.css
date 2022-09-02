@@ -116,11 +116,11 @@ div#category{
 #page-header{
   background: transparent!important;
 }
-/*top-img黑色透明玻璃效果移除，不建议加，除非你执睢�于完全一图流或��背景图对比色明� */
+/*top-img黑色透明玻璃效果移除，不建议加，除非你执睢�于完全一图流或����背景图对比色明�� */
 #page-header.post-bg:before {
   background-color: transparent!important;
 }
-/*夜间模式伪类遮罩层��明*/
+/*夜间模式伪类遮罩层����明*/
 [data-theme="dark"]
   #recent-posts > .recent-post-item{
       background: rgba(0, 0, 0, 0.5)!important;
@@ -227,7 +227,7 @@ img{
 a:hover{
     cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/link.cur'),auto;
 }
-/* 选中输入框时的鼠标指� */
+/* 选中输入框时的鼠标指�� */
 input:hover{
     cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/input.cur'),auto;
 }
@@ -247,14 +247,14 @@ i:hover{
 #pagination .page-number:hover{
       cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/i.cur'),auto;
 }
-/* 悬停菜单栏时的鼠标指� */
+/* 悬停菜单栏时的鼠标指�� */
 #nav .site-page:hover{
       cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/hf.cur'),auto;
 }
 
 .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
   left: -66px !important;
-  /* 默认情况下缩进左�66px，只留一点箭头部� */
+  /* 默认情况下缩进左��66px，只留一点箭头部�� */
 }
 
 .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
@@ -262,26 +262,22 @@ i:hover{
   /* 鼠标悬停是左侧缩进归零，完全显示按钮 */
 }
 
-/* 横向排布子菜� */
-#nav .menus_items .menus_item .menus_item_child li {
-  display: inline-block;
-}
 /* 圆角隐藏 */
 ul.menus_item_child {
   overflow: hidden;
   border-radius: 5px;
 }
-/* 调整空隙，确保不会天下武功唯快不� */
+/* 调整空隙，确保不会天下武功唯快不�� */
 #nav .menus_items .menus_item .menus_item_child {
   margin-top: 0px !important;
 }
 
-/* 搜索框圆� */
+/* 搜索框圆�� */
 .search-dialog {
     border-radius: 10px;
 }
 
-/*10s为加载动画的时间�1为加载动画的次数，ease-in-out为动画效�*/
+/*10s为加载动画的时间��1为加载动画的次数，ease-in-out为动画效��*/
 /*#page-header,
 #web_bg {
     -webkit-animation: imgblur 10s 1 ease-in-out;
