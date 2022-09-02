@@ -6,13 +6,13 @@ svg.icon {
    overflow: hidden;
 }
 
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
-  font-family: "iconfont"; /* Project id 3277826 */
-  /* Color fonts */
-  src:
-       url('/fonts/iconfont.woff2?t=1648282124042') format('woff2'),
-       url('/fonts/iconfont.woff?t=1648282124042') format('woff'),
-       url('/fonts/iconfont.ttf?t=1648282124042') format('truetype');
+  font-family: 'iconfont';  /* Project id 3277826 */
+  src: 
+       url('//at.alicdn.com/t/c/font_3277826_hsigkgp0tcp.woff2?t=1662126642871') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3277826_hsigkgp0tcp.woff?t=1662126642871') format('woff'),
+       url('//at.alicdn.com/t/c/font_3277826_hsigkgp0tcp.ttf?t=1662126642871') format('truetype');
 }
 
 .iconfont {
