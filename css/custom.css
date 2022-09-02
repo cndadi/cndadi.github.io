@@ -1,3 +1,12 @@
+svg.icon {
+  /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */
+   width: 1em; height: 1em;
+   /* width和height定义图标的默认宽度和高度*/
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
 svg.icon.festival-decoration {
     width: 3em;
     height: 3em;
@@ -9,7 +18,6 @@ svg.icon.festival-decoration {
     -webkit-animation: sway 1s infinite ease-in-out alternate;
     animation: sway 1s infinite ease-in-out alternate;
 }
-
 @-webkit-keyframes sway {
   0% {
     -webkit-transform: rotate(20deg);
@@ -30,13 +38,7 @@ svg.icon.festival-decoration {
     transform-origin: center top;
   }
 }
-/*iconfont默认样式*/
-.icon {
-  width: 1em; height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-  }
+
 /* 页脚蝴蝶振翅动画 */
 .copyright svg{
   animation:butterfly 1s linear infinite alternate;
@@ -50,61 +52,255 @@ svg.icon.festival-decoration {
   }
 }
 
-svg.icon {
-   width: 1em; height: 1em;
-   /* width和height定义图标的默认宽度和高度*/
-   vertical-align: -0.15em;
-   fill: currentColor;
-   overflow: hidden;
+@font-face{
+  font-family:'Candyhome' ;  /* 字体名自定义即可 */
+  src:url('/fonts/Candyhome.ttf'); /* 字体文件路径 */
+  font-display : swap;
 }
 
-@font-face {
-  font-family: "iconfont"; /* Project id 3277826 */
-  /* Color fonts */
-  src:
-       url('/fonts/iconfont.woff2?t=1648282124042') format('woff2'),
-       url('/fonts/iconfont.woff?t=1648282124042') format('woff'),
-       url('/fonts/iconfont.ttf?t=1648282124042') format('truetype');
+@font-face{
+  font-family:'ZhuZiAWan' ;  /* 字体名自定义即可 */
+  src:url('/fonts/ZhuZiAWan.ttf'); /* 字体文件路径 */
+  font-display : swap;
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 1em;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+h1#site-title {
+  font-family: 'Candyhome', sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif;*/
 }
 
-.icon-youxishoubing:before {
-  content: "\e631";
+body {
+  font-family: 'ZhuZiAWan', sans-serif;
+  font-size: 15px;
 }
 
-.icon-csdn:before {
-  content: "\e638";
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item{
+    background:rgba(255, 255, 255, 0.9);
+}
+/* 首页侧栏卡片 */
+.card-widget{
+  background:rgba(255, 255, 255, 0.9)!important;
+}
+/* 文章页面正文背景 */
+div#post{
+  background: rgba(255, 255, 255, 0.9);
+}
+/* 分页页面 */
+div#page{
+  background: rgba(255, 255, 255, 0.9);
+}
+/* 归档页面 */
+div#archive{
+  background: rgba(255, 255, 255, 0.9);
+}
+/* 标签页面 */
+div#tag{
+  background: rgba(255, 255, 255, 0.9);
+}
+/* 分类页面 */
+div#category{
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.icon-shejiaotubiao-46:before {
-  content: "\e64b";
+/* 页脚透明 */
+#footer{
+  background: transparent!important;
 }
-
-.icon-weixin:before {
-  content: "\e607";
+/* 页脚黑色透明玻璃效果移除 */
+#footer::before{
+    background: transparent!important;
+  }
+/* 头图透明 */
+#page-header{
+  background: transparent!important;
 }
-
-.icon-bilibili:before {
-  content: "\e609";
+/*top-img黑色透明玻璃效果移除，不建议加，除非你执睢�于完全一图流或��背景图对比色明� */
+#page-header.post-bg:before {
+  background-color: transparent!important;
 }
+/*夜间模式伪类遮罩层��明*/
+[data-theme="dark"]
+  #recent-posts > .recent-post-item{
+      background: rgba(0, 0, 0, 0.5)!important;
+    }
 
-.icon-juejin:before {
-  content: "\e60b";
+[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;
+    }
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+    }
+
+[data-theme="dark"]
+  #aside-content .card-widget{
+      background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#post{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#page{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#archive{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#tag{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#category{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+
+.read-mode #recent-posts > .recent-post-item{
+      background: rgba(158, 204, 171, 0.5)!important;
+    }
+
+.read-mode #aside-content .card-widget{
+      background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#post{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#page{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#archive{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#tag{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#category{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+
+[data-theme="dark"]
+  .read-mode #aside-content .card-widget{
+        background: rgba(0, 0, 0, 0.5)!important;
+        color: #ffffff;
+      }
+[data-theme="dark"]
+  .read-mode div#post{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+[data-theme="dark"]
+  .read-mode div#page{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+[data-theme="dark"]
+  .read-mode div#archive{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+[data-theme="dark"]
+  .read-mode div#tag{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+[data-theme="dark"]
+  .read-mode div#category{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+
+/* 全局默认鼠标指针 */
+body,
+html{
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/arrow.cur'),auto !important;
+}
+/* 悬停图片时的鼠标指针 */
+img{
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/btn.cur'),auto !important;
+}
+/* 选择链接标签时的鼠标指针 */
+a:hover{
+    cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/link.cur'),auto;
+}
+/* 选中输入框时的鼠标指� */
+input:hover{
+    cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/input.cur'),auto;
+}
+/* 悬停按钮时的鼠标指针 */
+button:hover{
+    cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/btn.cur'),auto;
+}
+/* 悬停列表标签时的鼠标指针 */
+i:hover{
+    cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/link.cur'),auto;
+}
+/* 悬停页脚链接标签（例如页脚徽标）时的鼠标指针 */
+#footer-wrap a:hover{
+      cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/hf.cur'),auto;
+}
+/* 悬停页码时的鼠标指针 */
+#pagination .page-number:hover{
+      cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/i.cur'),auto;
+}
+/* 悬停菜单栏时的鼠标指� */
+#nav .site-page:hover{
+      cursor: url('https://npm.elemecdn.com/akilar-candyassets/cur/hf.cur'),auto;
 }
 
 .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-  right: -66px !important;
-  /* 默认情况下缩进左侧66px，只留一点箭头部分 */
+  left: -66px !important;
+  /* 默认情况下缩进左�66px，只留一点箭头部� */
 }
 
 .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-  right: 0 !important;
+  left: 0 !important;
   /* 鼠标悬停是左侧缩进归零，完全显示按钮 */
 }
+
+/* 横向排布子菜� */
+#nav .menus_items .menus_item .menus_item_child li {
+  display: inline-block;
+}
+/* 圆角隐藏 */
+ul.menus_item_child {
+  overflow: hidden;
+  border-radius: 5px;
+}
+/* 调整空隙，确保不会天下武功唯快不� */
+#nav .menus_items .menus_item .menus_item_child {
+  margin-top: 0px !important;
+}
+
+/* 搜索框圆� */
+.search-dialog {
+    border-radius: 10px;
+}
+
+/*10s为加载动画的时间�1为加载动画的次数，ease-in-out为动画效�*/
+/*#page-header,
+#web_bg {
+    -webkit-animation: imgblur 10s 1 ease-in-out;
+    animation: imgblur 10s 1 ease-in-out;
+}
+@keyframes imgblur {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}*/
+/*适配使用-webkit内核的浏览器 */
+/*@-webkit-keyframes imgblur {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+  }
+}*/
