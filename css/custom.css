@@ -160,7 +160,7 @@ div#category{
 #page-header.post-bg:before {
   background-color: transparent!important;
 }
-夜间模式伪类遮罩层����明
+/*夜间模式伪类遮罩层����明*/
 [data-theme="dark"]
   #recent-posts > .recent-post-item{
       background: rgba(0, 0, 0, 0.5)!important;
