@@ -157,9 +157,9 @@ div#category{
   background: transparent!important;
 }
 /*top-img黑色透明玻璃效果移除，不建议加，除非你执睢�于完全一图流或����背景图对比色明�� */
-/* #page-header.post-bg:before {
+#page-header.post-bg:before {
   background-color: transparent!important;
-} */
+}
 夜间模式伪类遮罩层����明
 [data-theme="dark"]
   #recent-posts > .recent-post-item{
