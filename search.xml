@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>使用 OpenCV 对图像进行加水印</title>
+      <link href="/post/fdc544dc.html"/>
+      <url>/post/fdc544dc.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><ul><li><strong>💂 个人网站:【 <a href="https://haiyong.site/">海拥</a>】【<a href="https://haiyong.site/moyu/xbw/">小霸王游戏机</a>】【<a href="https://haiyong.site/moyu/zhizhuzhipai.html">蜘蛛纸牌</a>】</strong> </li><li><strong>🤟 风趣幽默的前端学习课程：👉<a href="https://www.lanqiao.cn/courses/8605">28个案例趣学前端</a></strong></li><li><strong>💅 想寻找共同学习交流、摸鱼划水的小伙伴，请点击【<a href="https://haiyong.site/chat/">摸鱼学习群</a>】【<a href="https://haiyong.site/doc/">学习文档</a>】</strong></li><li><strong>💬 免费且实用的计算机相关知识题库：👉<a href="https://www.nowcoder.com/exam/oj?tab=%E5%89%8D%E7%AB%AF%E7%AF%87&amp;topicId=260&amp;fromPut=pc_zh_n_haiyong_qianduan">进来逛逛</a></strong></li></ul></blockquote><p><strong>给大家安利一个免费且实用的 前端 刷题（面经大全）网站，👉<a href="https://www.nowcoder.com/exam/oj?tab=%E5%89%8D%E7%AB%AF%E7%AF%87&amp;topicId=260&amp;fromPut=pc_zh_n_haiyong_qianduan">点击跳转到网站</a>。</strong></p><font color="#F08080">**在本文中，我将带着大家使用 Python 和 OpenCV 对图像进行加水印。水印有意在图像上留下文本/标志，很多博主会使用水印来保护图像的版权。使用水印我们可以确保图像的所有者是在图像上印制水印的人。**</font><p>水印前的图片：<br><img src="https://img-blog.csdnimg.cn/e9bc420cb07c4824a4d29fb161cf4250.png#pic_center" alt="水印前的图片"><br>logo.png：<br><img src="https://img-blog.csdnimg.cn/8d7e656868b34b36bffb17516f9b0f37.png" alt="logo.png"></p><h2 id="🌌-第-1-步：导入-OpenCV-并读取logo和要应用水印的图像"><a href="#🌌-第-1-步：导入-OpenCV-并读取logo和要应用水印的图像" class="headerlink" title="🌌 第 1 步：导入 OpenCV 并读取logo和要应用水印的图像"></a>🌌 第 1 步：导入 OpenCV 并读取logo和要应用水印的图像</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 OpenCV 导入 cv2 的水印图像</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入我们将要使用的logo</span></span><br><span class="line">logo = cv2.imread(<span class="string">&quot;logo.png&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入我们要应用水印的图像</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;haiyong.png&quot;</span>)</span><br></pre></td></tr></table></figure><h2 id="💨-第-2步：计算两个图像的高度和宽度"><a href="#💨-第-2步：计算两个图像的高度和宽度" class="headerlink" title="💨 第 2步：计算两个图像的高度和宽度"></a>💨 第 2步：计算两个图像的高度和宽度</h2><p>计算两个图像的高度和宽度，并将它们保存到其他变量中。我们需要计算宽度和高度，因为我们要将水印放置在图像上的某个位置，为此，我们只需要知道徽标和图像的正确宽度和高度。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算logo的尺寸高度和宽度</span></span><br><span class="line">h_logo, w_logo, _ = logo.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像的高度和宽度</span></span><br><span class="line">h_img, w_img, _ = img.shape</span><br></pre></td></tr></table></figure><p>在这里，我们使用了OpenCV 中的shape函数，它返回图像的高度和宽度的元组。</p><h2 id="🚀-第-3-步：将水印放置在图像的中心"><a href="#🚀-第-3-步：将水印放置在图像的中心" class="headerlink" title="🚀 第 3 步：将水印放置在图像的中心"></a>🚀 第 3 步：将水印放置在图像的中心</h2><p>现在，我们将计算图像中心的坐标，因为我要将水印放置在图像的中心，你们也可以选择其他位置。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算中心计算中心的坐标，我们将在其中放置水印</span></span><br><span class="line">center_y = <span class="built_in">int</span>(h_img/<span class="number">2</span>)</span><br><span class="line">center_x = <span class="built_in">int</span>(w_img/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从上、下、右、左计算</span></span><br><span class="line">top_y = center_y - <span class="built_in">int</span>(h_logo/<span class="number">2</span>)</span><br><span class="line">bottom_y = top_y + h_logo</span><br><span class="line">right_x = left_x + w_logo</span><br><span class="line">left_x = center_x - <span class="built_in">int</span>(w_logo/<span class="number">2</span>)</span><br></pre></td></tr></table></figure><h2 id="🍺-第-4-步：使用-OpenCV-中的-addWeighted-函数"><a href="#🍺-第-4-步：使用-OpenCV-中的-addWeighted-函数" class="headerlink" title="🍺 第 4 步：使用 OpenCV 中的 addWeighted 函数"></a>🍺 第 4 步：使用 OpenCV 中的 addWeighted 函数</h2><p>要为图像添加水印，我们将使用 OpenCV 中的 addWeighted 函数。首先，我们将提供要放置水印的目的地，然后将该目的地传递给带有图像和徽标的 addWeighted 函数。</p><p>语法： <code>cv2.addWeighted(source1, alpha, source2, beta, gamma)</code></p><p>在我们的例子中，source1 是我们想要放置logo的图像，alpha 是logo的不透明度，source2 是logo本身，我们将相应地设置 beta为1，不透明度的 alpha 和 gamma分别为 1 和 0。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给图片添加水印</span></span><br><span class="line">destination = img[top_y:bottom_y, left_x:right_x]</span><br><span class="line">result = cv2.addWeighted(destination, <span class="number">1</span>, logo, <span class="number">1</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure><h2 id="🎨-第-5-步：显示结果并保存输出"><a href="#🎨-第-5-步：显示结果并保存输出" class="headerlink" title="🎨 第 5 步：显示结果并保存输出"></a>🎨 第 5 步：显示结果并保存输出</h2><p>之后，我们只是显示结果并保存输出。为了显示我们使用imshow 函数的输出并写入/保存图像，我们在两个函数中都使用imwrite 函数，首先我们必须提供文件名作为参数，然后是文件本身。cv2.waitKey(0) 用于等待直到用户按下 Esc 键，之后 cv2.destroyAllWindows 函数将关闭窗口。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># displaying and saving image</span></span><br><span class="line">img[top_y:bottom_y, left_x:right_x] = result</span><br><span class="line">cv2.imwrite(<span class="string">&quot;watermarked.jpg&quot;</span>, img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Watermarked Image&quot;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure><h2 id="🛹-下面是完整的实现："><a href="#🛹-下面是完整的实现：" class="headerlink" title="🛹 下面是完整的实现："></a>🛹 下面是完整的实现：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 OpenCV 导入 cv2 的水印图像</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入我们将要使用的logo</span></span><br><span class="line">logo = cv2.imread(<span class="string">&quot;logo.png&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入我们要应用水印的图像</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;haiyong.png&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算logo的尺寸高度和宽度</span></span><br><span class="line">h_logo, w_logo, _ = logo.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像的高度和宽度</span></span><br><span class="line">h_img, w_img, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算中心计算中心的坐标，我们将在其中放置水印</span></span><br><span class="line">center_y = <span class="built_in">int</span>(h_img/<span class="number">2</span>)</span><br><span class="line">center_x = <span class="built_in">int</span>(w_img/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从上、下、右、左计算</span></span><br><span class="line">top_y = center_y - <span class="built_in">int</span>(h_logo/<span class="number">2</span>)</span><br><span class="line">left_x = center_x - <span class="built_in">int</span>(w_logo/<span class="number">2</span>)</span><br><span class="line">bottom_y = top_y + h_logo</span><br><span class="line">right_x = left_x + w_logo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给图片添加水印</span></span><br><span class="line">destination = img[top_y:bottom_y, left_x:right_x]</span><br><span class="line">result = cv2.addWeighted(destination, <span class="number">1</span>, logo, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示和保存图像</span></span><br><span class="line">img[top_y:bottom_y, left_x:right_x] = result</span><br><span class="line">cv2.imwrite(<span class="string">&quot;watermarked.jpg&quot;</span>, img)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Watermarked Image&quot;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure><p><strong>输出：</strong><br><img src="https://img-blog.csdnimg.cn/1761898a187842728abedd8b9a19d571.jpg#pic_center" alt="在这里插入图片描述"></p><h2 id="🛬-wuhu-起飞"><a href="#🛬-wuhu-起飞" class="headerlink" title="🛬 wuhu ! 起飞 !"></a>🛬 wuhu ! 起飞 !</h2><blockquote><p>我已经写了很长一段时间的技术博客，并且主要通过CSDN发表，这是我的一篇 python 小程序教程。我喜欢通过文章分享技术与快乐。你可以访问我的博客： <a href="https://haiyong.blog.csdn.net/">https://haiyong.blog.csdn.net/</a> 以了解更多信息。希望你们会喜欢！😊</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 有用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端学习路线</title>
       <link href="/post/e5cf9037.html"/>
       <url>/post/e5cf9037.html</url>
@@ -14,13 +35,13 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JavaScript </tag>
             
@@ -41,9 +62,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 粉丝福利 </tag>
+            
+            <tag> Python </tag>
             
             <tag> 送书 </tag>
             
@@ -64,13 +85,13 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JavaScript </tag>
             
@@ -112,9 +133,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JavaScript </tag>
             
@@ -135,9 +156,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JavaScript </tag>
             
@@ -158,9 +179,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -179,9 +200,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Windows </tag>
             
@@ -223,9 +244,9 @@
       
         <tags>
             
-            <tag> IntelliJ IDEA </tag>
-            
             <tag> Java </tag>
+            
+            <tag> IntelliJ IDEA </tag>
             
             <tag> Hello World </tag>
             
@@ -250,9 +271,9 @@
             
             <tag> 前端 </tag>
             
-            <tag> IntelliJ IDEA </tag>
-            
             <tag> Java </tag>
+            
+            <tag> IntelliJ IDEA </tag>
             
             <tag> Hello World </tag>
             
@@ -273,9 +294,9 @@
       
         <tags>
             
-            <tag> IntelliJ IDEA </tag>
-            
             <tag> Java </tag>
+            
+            <tag> IntelliJ IDEA </tag>
             
             <tag> Hello World </tag>
             
@@ -317,9 +338,9 @@
             
             <tag> Java </tag>
             
-            <tag> Maven </tag>
-            
             <tag> Eclipse </tag>
+            
+            <tag> Maven </tag>
             
         </tags>
       
@@ -363,9 +384,9 @@
             
             <tag> Java </tag>
             
-            <tag> Tomcat </tag>
-            
             <tag> Eclipse </tag>
+            
+            <tag> Tomcat </tag>
             
         </tags>
       
@@ -472,11 +493,11 @@
       
         <tags>
             
-            <tag> Windows </tag>
-            
             <tag> Java </tag>
             
             <tag> Eclipse </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
@@ -535,11 +556,7 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
-            <tag> Python </tag>
-            
-            <tag> 游戏 </tag>
+            <tag> Google </tag>
             
             <tag> HTML </tag>
             
@@ -547,13 +564,17 @@
             
             <tag> JS </tag>
             
-            <tag> Google </tag>
+            <tag> 后端 </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Java </tag>
             
-            <tag> 后端 </tag>
+            <tag> Python </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> 游戏 </tag>
             
         </tags>
       
@@ -572,9 +593,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> Butterfly </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -593,9 +614,9 @@
       
         <tags>
             
-            <tag> 粉丝福利 </tag>
-            
             <tag> Google </tag>
+            
+            <tag> 粉丝福利 </tag>
             
             <tag> 活动 </tag>
             
@@ -793,17 +814,17 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
-            <tag> 游戏 </tag>
-            
-            <tag> 摸鱼 </tag>
-            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -841,9 +862,7 @@
       
         <tags>
             
-            <tag> 游戏 </tag>
-            
-            <tag> 摸鱼 </tag>
+            <tag> 粉丝福利 </tag>
             
             <tag> HTML </tag>
             
@@ -851,7 +870,9 @@
             
             <tag> JS </tag>
             
-            <tag> 粉丝福利 </tag>
+            <tag> 游戏 </tag>
+            
+            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -870,17 +891,17 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
-            <tag> 游戏 </tag>
-            
-            <tag> 摸鱼 </tag>
-            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -899,11 +920,11 @@
       
         <tags>
             
+            <tag> Butterfly </tag>
+            
             <tag> hexo </tag>
             
             <tag> 前端 </tag>
-            
-            <tag> Butterfly </tag>
             
         </tags>
       
@@ -924,9 +945,9 @@
             
             <tag> hexo </tag>
             
-            <tag> GitHub </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> GitHub </tag>
             
         </tags>
       
@@ -1046,44 +1067,11 @@
     
     
     <entry>
-      <title>摸鱼大军</title>
-      <link href="/chat/index.html"/>
-      <url>/chat/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="tag link"><a class="link-card" title="摸鱼游戏入口" href="https://haiyong.site/moyu/"><div class="left"><img src="https://haiyong.site/img/favicon.png"/></div><div class="right"><p class="text">摸鱼游戏入口</p><p class="url">https://haiyong.site/moyu/</p></div></a></div><div class="table-container"><table><thead><tr><th>微信摸鱼交流圈</th><th>QQ摸鱼交流圈</th><th>QQ前端交流圈</th></tr></thead><tbody><tr><td><img src="https://haiyong.site/img/qrcode/220911.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209011.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209012.jpg" alt=""></td></tr></tbody></table></div><table style="border-collapse: collapse; min-width: 100%;">    <colgroup>        <col style="width: 175px;">        <col style="width: 509px;">    </colgroup>    <tbody>        <tr>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 175px; padding: 8px;">                <div>                    <span style="font-size: 12px; font-weight: bold;">几十G硬核资料：</span>                </div>                <div><span style="font-size: 12px; font-weight: bold;">扫码回复「资料」领取所有</span></div>                <div>                    <img ext="jpeg" src="https://haiyong.site/img/qrcode/gongzhonghao.png"                     width="180" height="180" class="en-media">                </div>            </td>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 509px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">1、PPT模板几千套、</span><span style="font-size: 12px; font-weight: bold;">简历模板一千套</span></div>                <div><span style="font-size: 12px; font-weight: bold;">2、</span><span style="font-size: 12px; font-weight: bold;">Java核心知识点大全面试真题资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">3、</span><span style="font-size: 12px; font-weight: bold;">Python全集(400集)</span></div>                <div><span style="font-size: 12px; font-weight: bold;">4、</span><span style="font-size: 12px; font-weight: bold;">2300套PHP建站源码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">5、</span><span style="font-size: 12px; font-weight: bold;">微信小程序入门资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">6、</span><span style="font-size: 12px; font-weight: bold;">SEO实战密码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">7、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">图灵程序丛书300本</span></div>                <div><span style="font-size: 12px; font-weight: bold;">8、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">6000册免费正版图书</span></div>                <div><span style="font-size: 12px; font-weight: bold;">9、</span><span style="font-size: 12px; font-weight: bold;">装机必备程序</span></div>                <div><span style="font-size: 12px; font-weight: bold;">10、</span><span style="font-size: 12px; font-weight: bold;">定期粉丝送书，抽送精美小礼品</span></div>                <div><br></div>            </td>        </tr>        <tr>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">个人网站</span><span style="font-size: 12px;">：</span></div>            </td>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 509px; padding: 8px;">                <div><a href="http://haiyong.site/" style="font-size: 10pt; color: rgb(0, 0, 0);">haiyong.site</a></div>            </td>        </tr>        <tr>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">摸鱼社区</span></div>            </td>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 509px; padding: 8px;">                <div><a href="https://bbs.csdn.net/forums/moyu">https://bbs.csdn.net/forums/moyu</a></div>            </td>        </tr>    </tbody></table>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="博主简介"><a href="#博主简介" class="headerlink" title="博主简介"></a>博主简介</h3><p> <strong><a href="https://haiyong.site/">海拥</a>，一枚99年的博主，<a href="https://haiyong.site/moyu">摸鱼</a>🐬网站创办于2021年8月，耗时一年打造，致力于为<a href="https://haiyong.site/chat">摸鱼家族</a>提供一个良好的学习（摸鱼）环境。拥有在线游戏、工具、动画案例等，各类计算机技术资源（前端、Java、Python等）无论是初学计算机技术的蒟蒻，还是久经沙场的大神，均可从中获益，也可以帮助他人，共同进步。是学习、摸鱼时理想的网站。</strong></p><p> <strong>全网粉丝12万+，一枚爱好计算机科学，求索于逻辑思维的同时不忘哲学和浪漫主义科学，<a href="https://haiyong.site/about">乐于分享技术与快乐的博主</a></strong></p><ul><li><strong><a href="https://haiyong.blog.csdn.net/"><font color="#e60101">CSDN原力计划作者，全栈领域优质创作者</font></a></strong></li><li><strong><a href="https://bbs.huaweicloud.com/community/usersnew/id_1628036118897599"><font color="#e66b6d">华为云享专家，HDZ核心组成员</font></a></strong></li><li><strong><a href="https://developer.aliyun.com/profile/expert/hzihvtuv57hlu"><font color="#e66d98">阿里云开发者社区技术博主、专家博主 </font></a></strong></li><li><strong><a href="https://blog.51cto.com/haiyongblog"><font color="#e66cc6">51CTO 专家博主、TOP红人，2022十大金星博主</font></a></strong></li><li><strong><a href="https://www.infoq.cn/u/haiyong"><font color="#cc6de6">InfoQ 写作社区 —— 签约作者</font></a></strong></li><li><strong><a href="https://www.lanqiao.cn/courses/8605"><font color="#9770e6">蓝桥云课平台 —— 签约作者</font></a></strong></li><li><strong><a href="https://juejin.cn/user/2040341402229751"><font color="#6d93e6">掘金2021年度人气作者 No.21</font></a></strong>  </li><li><strong><a href="https://space.bilibili.com/63551025"><font color="#6fcde6">bilibili 年度大会员</font></a></strong></li><li><strong><font color="#72e6b6"><a href="https://bbs.csdn.net/topics/603581677">2021爱智征文 一等奖</a>，<a href="https://bbs.csdn.net/topics/603972611">Go+ 征文大赛创作奖</a></font></strong></li><li><strong><a href="https://bbs.csdn.net/forums/moyu"><font color="#72e689">CSDN 摸鱼社区创建者，社区成员目前8.5W+</font></a></strong></li><li><strong><a href="https://www.zhihu.com/people/haiyongblog"><font color="#99e670">知乎科学技术领域答主</font></a></strong></li><li><strong><a href="https://www.nowcoder.com/profile/533772245"><font color="#cde670">牛客 Lv.7 红名大佬🐂</font></a></strong></li><li><strong><a href="https://github.com/wanghao221/moyu"><font color="#e6df72">GitHub 100个摸鱼游戏作者</font></a></strong></li><li><strong><a href="https://haiyong.site/"><font color="#e6c073">haiyong.site 网站站长</font></a></strong></li></ul><h3 id="联系作者"><a href="#联系作者" class="headerlink" title="联系作者"></a>联系作者</h3><ul><li>微信：<a href="https://haiyong.site/img/qrcode/weixin.png">wh18363</a>、QQ: 1836360247</li><li>微信群：<a href="https://app.yinxiang.com/fx/8aa8eb1b-7d45-4793-a160-b990d9da2e75">在此更新</a></li><li>QQ 全栈群：<a href="https://jq.qq.com/?_wv=1027&amp;k=SICM6psX">151836911</a>、QQ 前端群：<a href="https://jq.qq.com/?_wv=1027&amp;k=11IbjgdE">563210781</a></li></ul>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友人帐</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="申请友链请先添加本站链接哦"><a href="#申请友链请先添加本站链接哦" class="headerlink" title="申请友链请先添加本站链接哦"></a>申请友链请先添加本站链接哦</h3><p>侧边栏有我的联系方式，微信【wh18363】QQ【1836360247】</p><p>请确保您已添加本站为友链，并以以下格式留言：</p><ul><li>站点名字：海拥</li><li>站点地址：<a href="https://haiyong.site">https://haiyong.site</a></li><li>站点图片：<a href="https://haiyong.site/img/favicon.png">https://haiyong.site/img/favicon.png</a></li><li>站点简介：一个乐于分享技术与快乐的博主</li></ul>]]></content>
       
     </entry>
     
@@ -1101,11 +1089,44 @@
     
     
     <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="博主简介"><a href="#博主简介" class="headerlink" title="博主简介"></a>博主简介</h3><p> <strong><a href="https://haiyong.site/">海拥</a>，一枚99年的博主，<a href="https://haiyong.site/moyu">摸鱼</a>🐬网站创办于2021年8月，耗时一年打造，致力于为<a href="https://haiyong.site/chat">摸鱼家族</a>提供一个良好的学习（摸鱼）环境。拥有在线游戏、工具、动画案例等，各类计算机技术资源（前端、Java、Python等）无论是初学计算机技术的蒟蒻，还是久经沙场的大神，均可从中获益，也可以帮助他人，共同进步。是学习、摸鱼时理想的网站。</strong></p><p> <strong>全网粉丝12万+，一枚爱好计算机科学，求索于逻辑思维的同时不忘哲学和浪漫主义科学，<a href="https://haiyong.site/about">乐于分享技术与快乐的博主</a></strong></p><ul><li><strong><a href="https://haiyong.blog.csdn.net/"><font color="#e60101">CSDN原力计划作者，全栈领域优质创作者</font></a></strong></li><li><strong><a href="https://bbs.huaweicloud.com/community/usersnew/id_1628036118897599"><font color="#e66b6d">华为云享专家，HDZ核心组成员</font></a></strong></li><li><strong><a href="https://developer.aliyun.com/profile/expert/hzihvtuv57hlu"><font color="#e66d98">阿里云开发者社区技术博主、专家博主 </font></a></strong></li><li><strong><a href="https://blog.51cto.com/haiyongblog"><font color="#e66cc6">51CTO 专家博主、TOP红人，2022十大金星博主</font></a></strong></li><li><strong><a href="https://www.infoq.cn/u/haiyong"><font color="#cc6de6">InfoQ 写作社区 —— 签约作者</font></a></strong></li><li><strong><a href="https://www.lanqiao.cn/courses/8605"><font color="#9770e6">蓝桥云课平台 —— 签约作者</font></a></strong></li><li><strong><a href="https://juejin.cn/user/2040341402229751"><font color="#6d93e6">掘金2021年度人气作者 No.21</font></a></strong>  </li><li><strong><a href="https://space.bilibili.com/63551025"><font color="#6fcde6">bilibili 年度大会员</font></a></strong></li><li><strong><font color="#72e6b6"><a href="https://bbs.csdn.net/topics/603581677">2021爱智征文 一等奖</a>，<a href="https://bbs.csdn.net/topics/603972611">Go+ 征文大赛创作奖</a></font></strong></li><li><strong><a href="https://bbs.csdn.net/forums/moyu"><font color="#72e689">CSDN 摸鱼社区创建者，社区成员目前8.5W+</font></a></strong></li><li><strong><a href="https://www.zhihu.com/people/haiyongblog"><font color="#99e670">知乎科学技术领域答主</font></a></strong></li><li><strong><a href="https://www.nowcoder.com/profile/533772245"><font color="#cde670">牛客 Lv.7 红名大佬🐂</font></a></strong></li><li><strong><a href="https://github.com/wanghao221/moyu"><font color="#e6df72">GitHub 100个摸鱼游戏作者</font></a></strong></li><li><strong><a href="https://haiyong.site/"><font color="#e6c073">haiyong.site 网站站长</font></a></strong></li></ul><h3 id="联系作者"><a href="#联系作者" class="headerlink" title="联系作者"></a>联系作者</h3><ul><li>微信：<a href="https://haiyong.site/img/qrcode/weixin.png">wh18363</a>、QQ: 1836360247</li><li>微信群：<a href="https://app.yinxiang.com/fx/8aa8eb1b-7d45-4793-a160-b990d9da2e75">在此更新</a></li><li>QQ 全栈群：<a href="https://jq.qq.com/?_wv=1027&amp;k=SICM6psX">151836911</a>、QQ 前端群：<a href="https://jq.qq.com/?_wv=1027&amp;k=11IbjgdE">563210781</a></li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蓝桥</title>
       <link href="/lanqiao/index.html"/>
       <url>/lanqiao/index.html</url>
       
         <content type="html"><![CDATA[<div class="gallery-group-main">  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://img-blog.csdnimg.cn/0d98fa8fb9224b72bd67849ea6333489.png' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">实验一</div>  <p>博客页面布局</p>  <a href='https://haiyong.site/post/16108.html'></a>  </figcaption>  </figure>    <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://img-blog.csdnimg.cn/a5c2f933909044ff8d02235342b62b39.png' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">实验二</div>  <p>使用 CSS 来装饰我们的第一个网页</p>  <a href='https://haiyong.site/post/16109.html'></a>  </figcaption>  </figure>    <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://img-blog.csdnimg.cn/0cc11cc54726406086a46b752d7d5af0.png' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">实验三</div>  <p>使用 CSS 制作打字机</p>  <a href='https://haiyong.site/post/44274.html'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友人帐</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="申请友链请先添加本站链接哦"><a href="#申请友链请先添加本站链接哦" class="headerlink" title="申请友链请先添加本站链接哦"></a>申请友链请先添加本站链接哦</h3><p>侧边栏有我的联系方式，微信【wh18363】QQ【1836360247】</p><p>请确保您已添加本站为友链，并以以下格式留言：</p><ul><li>站点名字：海拥</li><li>站点地址：<a href="https://haiyong.site">https://haiyong.site</a></li><li>站点图片：<a href="https://haiyong.site/img/favicon.png">https://haiyong.site/img/favicon.png</a></li><li>站点简介：一个乐于分享技术与快乐的博主</li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>摸鱼大军</title>
+      <link href="/chat/index.html"/>
+      <url>/chat/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="tag link"><a class="link-card" title="摸鱼游戏入口" href="https://haiyong.site/moyu/"><div class="left"><img src="https://haiyong.site/img/favicon.png"/></div><div class="right"><p class="text">摸鱼游戏入口</p><p class="url">https://haiyong.site/moyu/</p></div></a></div><div class="table-container"><table><thead><tr><th>微信摸鱼交流圈</th><th>QQ摸鱼交流圈</th><th>QQ前端交流圈</th></tr></thead><tbody><tr><td><img src="https://haiyong.site/img/qrcode/220911.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209011.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209012.jpg" alt=""></td></tr></tbody></table></div><table style="border-collapse: collapse; min-width: 100%;">    <colgroup>        <col style="width: 175px;">        <col style="width: 509px;">    </colgroup>    <tbody>        <tr>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 175px; padding: 8px;">                <div>                    <span style="font-size: 12px; font-weight: bold;">几十G硬核资料：</span>                </div>                <div><span style="font-size: 12px; font-weight: bold;">扫码回复「资料」领取所有</span></div>                <div>                    <img ext="jpeg" src="https://haiyong.site/img/qrcode/gongzhonghao.png"                     width="180" height="180" class="en-media">                </div>            </td>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 509px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">1、PPT模板几千套、</span><span style="font-size: 12px; font-weight: bold;">简历模板一千套</span></div>                <div><span style="font-size: 12px; font-weight: bold;">2、</span><span style="font-size: 12px; font-weight: bold;">Java核心知识点大全面试真题资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">3、</span><span style="font-size: 12px; font-weight: bold;">Python全集(400集)</span></div>                <div><span style="font-size: 12px; font-weight: bold;">4、</span><span style="font-size: 12px; font-weight: bold;">2300套PHP建站源码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">5、</span><span style="font-size: 12px; font-weight: bold;">微信小程序入门资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">6、</span><span style="font-size: 12px; font-weight: bold;">SEO实战密码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">7、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">图灵程序丛书300本</span></div>                <div><span style="font-size: 12px; font-weight: bold;">8、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">6000册免费正版图书</span></div>                <div><span style="font-size: 12px; font-weight: bold;">9、</span><span style="font-size: 12px; font-weight: bold;">装机必备程序</span></div>                <div><span style="font-size: 12px; font-weight: bold;">10、</span><span style="font-size: 12px; font-weight: bold;">定期粉丝送书，抽送精美小礼品</span></div>                <div><br></div>            </td>        </tr>        <tr>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">个人网站</span><span style="font-size: 12px;">：</span></div>            </td>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 509px; padding: 8px;">                <div><a href="http://haiyong.site/" style="font-size: 10pt; color: rgb(0, 0, 0);">haiyong.site</a></div>            </td>        </tr>        <tr>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">摸鱼社区</span></div>            </td>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 509px; padding: 8px;">                <div><a href="https://bbs.csdn.net/forums/moyu">https://bbs.csdn.net/forums/moyu</a></div>            </td>        </tr>    </tbody></table>]]></content>
       
     </entry>
     
