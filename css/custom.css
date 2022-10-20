@@ -7,20 +7,90 @@ svg.icon {
 }
 
 /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+
 @font-face {
-  font-family: 'iconfont';  /* Project id 3277826 */
+  font-family: "iconfont"; /* Project id 3277826 */
+  /* Color fonts */
   src: 
-       url('//at.alicdn.com/t/c/font_3277826_kpbmw8arib.woff2?t=1662127485531') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3277826_kpbmw8arib.woff?t=1662127485531') format('woff'),
-       url('//at.alicdn.com/t/c/font_3277826_kpbmw8arib.ttf?t=1662127485531') format('truetype');
+       url('//at.alicdn.com/t/c/font_3277826_pazcgxori7h.woff2?t=1666230734702') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3277826_pazcgxori7h.woff?t=1666230734702') format('woff'),
+       url('//at.alicdn.com/t/c/font_3277826_pazcgxori7h.ttf?t=1666230734702') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 1em;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wangluoke:before {
+  content: "\e612";
+}
+
+.icon-aixin:before {
+  content: "\e741";
+}
+
+.icon-gongzhonghao:before {
+  content: "\e643";
+}
+
+.icon-gongzhonghao1:before {
+  content: "\e698";
+}
+
+.icon-gongzhonghao2x:before {
+  content: "\e64a";
+}
+
+.icon-guanzhugongzhonghao:before {
+  content: "\e604";
+}
+
+.icon-pc:before {
+  content: "\e8d2";
+}
+
+.icon-pc1:before {
+  content: "\e629";
+}
+
+.icon-Javascript-icon-02:before {
+  content: "\e633";
+}
+
+.icon-linux:before {
+  content: "\e80b";
+}
+
+.icon-html:before {
+  content: "\e632";
+}
+
+.icon-java:before {
+  content: "\e639";
+}
+
+.icon-python:before {
+  content: "\e690";
+}
+
+.icon-github1:before {
+  content: "\e628";
+}
+
+.icon-github2:before {
+  content: "\ea0b";
+}
+
+.icon-github:before {
+  content: "\e64c";
+}
+
+.icon-logo:before {
+  content: "\e600";
 }
 
 .icon-youxishoubing:before {
@@ -46,6 +116,7 @@ svg.icon {
 .icon-juejin:before {
   content: "\e60b";
 }
+
 
 svg.icon.festival-decoration {
     width: 3em;
