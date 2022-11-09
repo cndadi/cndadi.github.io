@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>如何像我这样创建一个酷炫且能赚钱的网站（使用宝塔安装WordPress搭建子比主题）</title>
+      <link href="/post/60aa41f9.html"/>
+      <url>/post/60aa41f9.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><ul><li><strong>💂 个人网站:【<a href="https://haiyong.site/">海拥</a>】【<a href="https://code.haiyong.site/moyu/">摸鱼小游戏</a>】【<a href="https://code.haiyong.site/">神级源码资源网站</a>】</strong></li><li><strong>🤟 风趣幽默的前端学习课程：👉<a href="https://www.lanqiao.cn/courses/8605">28个案例趣学前端</a></strong></li><li><strong>💅 想寻找共同学习交流、摸鱼划水的小伙伴，请点击【<a href="https://haiyong.site/chat/">摸鱼学习交流群</a>】</strong></li><li><strong>💬 免费且实用的 前端刷题（面经大全）网站：👉<a href="https://www.nowcoder.com/exam/oj?tab=%E5%89%8D%E7%AB%AF%E7%AF%87&amp;topicId=260&amp;fromPut=pc_zh_n_haiyong_qianduan">点击跳转到网站</a></strong></li></ul></blockquote><p>3！2！1！上链接：<a href="https://code.haiyong.site/">https://code.haiyong.site/</a></p><p><img src="https://img-blog.csdnimg.cn/a2e54ca2073f4b229681348853e6f5a3.png" alt="在这里插入图片描述"></p><p>不瞒大家说，自我这个新网站创建以来已经赚了几百块钱，虽然不多，但每天的饭钱省了，当然我的初衷不是为了赚钱，只是觉得这个网站比较酷炫，搭建起来也不难，想练练手。今天就手把手教大家如何搭建一个这样的网站。</p><p>WordPress下载链接：<a href="https://code.haiyong.site/750/">https://code.haiyong.site/750/</a><br>子比主题下载：<a href="https://code.haiyong.site/145/">https://code.haiyong.site/145/</a></p><p>完整教学视频也上传到了哔哩哔哩，习惯看视频学的可以去这里👉<br>[video(video-47kQSG92-1667881405699)(type-bilibili)(url-<a href="https://player.bilibili.com/player.html?aid=902436176)(image-https://img-blog.csdnimg.cn/img_convert/36a612afb1c816fb073259175e9665d4.jpeg)(title-宝塔安装WordPress搭建子比主题">https://player.bilibili.com/player.html?aid=902436176)(image-https://img-blog.csdnimg.cn/img_convert/36a612afb1c816fb073259175e9665d4.jpeg)(title-宝塔安装WordPress搭建子比主题</a>)]</p><p>近期的收益</p><p><img src="https://img-blog.csdnimg.cn/c24ad8ba9b314dee872ba66dab515f1f.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/8c3f2b02dd2b4767a5c594f3077a9ee2.png" alt="在这里插入图片描述"></p><p>不多说了，上教程</p><h3 id="1-登录宝塔"><a href="#1-登录宝塔" class="headerlink" title="1.登录宝塔"></a>1.登录宝塔</h3><p>首先需要在服务商租一台服务器，选择宝塔面板，获取用户名跟密码后登录宝塔。</p><p><img src="https://img-blog.csdnimg.cn/d93369e5adf747039da4689126e99a3a.png" alt="在这里插入图片描述"></p><h3 id="2-创建站点"><a href="#2-创建站点" class="headerlink" title="2.创建站点"></a>2.创建站点</h3><p>没有域名可以先使用IP创建站点，有域名可以先解析域名，用域名创建。</p><p>勾选FTP跟数据库<br><img src="https://img-blog.csdnimg.cn/1c6f53ba8daa4a2aa5b89fc975d2438c.png" alt="在这里插入图片描述"><br>访问IP测试一下是否能访问成功</p><p><img src="https://img-blog.csdnimg.cn/5ba0c9bf0b684100a3f762fe6b9b2390.png" alt="在这里插入图片描述"><br>伪静态选择Wordpress</p><p><img src="https://img-blog.csdnimg.cn/a97f903f04ee40cdaca7fb04c73ce718.png" alt="在这里插入图片描述"><br>在网站根目录中导入WordPress安装包，这里我使用的是WordPress6.0，最新版是6.1，上传后将压缩包解压，并将文件都剪切到根目录下。</p><p><img src="https://img-blog.csdnimg.cn/1c47eb1acfba452684fc0c6c7b890c0a.png" alt="在这里插入图片描述"></p><h3 id="3-安装-Wordpress"><a href="#3-安装-Wordpress" class="headerlink" title="3.安装 Wordpress"></a>3.安装 Wordpress</h3><p>Wordpress上传并解压剪切到根目录后是这样的</p><p><img src="https://img-blog.csdnimg.cn/36dce3c44b7a4f0dbf27885ec0961918.png" alt="在这里插入图片描述"></p><p>然后访问IP地址</p><p><img src="https://img-blog.csdnimg.cn/bd1d85e05cdb40188286ed1003441498.png" alt="在这里插入图片描述"><br>点击开始安装，将自己数据库用户名、密码等都填写完成，提交</p><p><img src="https://img-blog.csdnimg.cn/1be2245c86a8439291909bda8191b60d.png" alt="在这里插入图片描述"></p><p>然后填写一下站点标题，用户名，登录密码和你的邮箱地址</p><p><img src="https://img-blog.csdnimg.cn/7343e96ad76542cb8d0399e836b005d0.png" alt="在这里插入图片描述"><br>使用邮箱跟密码登录你的Wordpress后台，访问我们的站点IP，现在看到的就是WordPress的默认主题了。</p><p><img src="https://img-blog.csdnimg.cn/30b4b8a7f5aa4226be206cb8dbc104dd.png" alt="在这里插入图片描述"><br>现在在站点根目录找到wp-content，再找到 themes</p><p><img src="https://img-blog.csdnimg.cn/fb357a88bc32448a8b5bad2b4f801fca.png" alt="在这里插入图片描述"><br>上传<a href="https://code.haiyong.site/145/">子比主题压缩包</a>，然后解压，类似于刚刚我们安装WordPress。解压后的文件夹剪切到 themes 下。</p><p><img src="https://img-blog.csdnimg.cn/dfbb8232a85d42fd935acfbafbf79c48.png" alt="在这里插入图片描述"><br>回到 WordPress 后台中的主题，刷新一下就能看到子比主题了，点击启用，再次访问我们的站点IP就完成了</p><p><img src="https://img-blog.csdnimg.cn/067e93532d3f4fbb8671fa1eff1b4dc8.png" alt="在这里插入图片描述"></p><p>到这了我们就完成了子比主题的创建，后面就是进行一点一点的优化了。</p><p>给大家看一下我的成品：<a href="https://code.haiyong.site/">https://code.haiyong.site/</a></p><p>每天靠卖卖代码资源也能赚顿饭钱，还有会员功能，目前我的网站已经卖出去了一份永久超级会员，几个月服务器的钱有了，可以设置神评，热榜，用户推荐，个人主页，用户登录注册功能，搜索功能等等基本上该有的功能都有了。各种板块随意搭建。</p><p>使用Wordpress还有一个好处就是方便做SEO（搜索引擎优化），还有什么问题可以评论或者私信告诉我。觉得对你有帮助的话给个一键三连吧。下一期可以教大家如何解析绑定域名并设置https，子比主题使用细节或者怎么做SEO，想学什么可以评论告诉我。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.Wordpress6.0.2下载：<a href="https://code.haiyong.site/750/">https://code.haiyong.site/750/</a><br>2.子比主题下载：</p><ul><li>CSDN资源：<a href="https://download.csdn.net/download/qq_44273429/86930993">https://download.csdn.net/download/qq_44273429/86930993</a></li><li>海拥资源网：<a href="https://code.haiyong.site/145/">https://code.haiyong.site/145/</a></li><li>公众号【海拥】回复【子比】获取</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>海拥资源网持续更新中</title>
       <link href="/post/1331ff77.html"/>
       <url>/post/1331ff77.html</url>
@@ -136,9 +155,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 有用 </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -322,11 +341,11 @@
       
         <tags>
             
+            <tag> Windows </tag>
+            
             <tag> 前端 </tag>
             
             <tag> HTML </tag>
-            
-            <tag> Windows </tag>
             
         </tags>
       
@@ -391,9 +410,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> Java </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> IntelliJ IDEA </tag>
             
@@ -504,9 +523,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> Tomcat </tag>
+            
+            <tag> Java </tag>
             
             <tag> Eclipse </tag>
             
@@ -617,9 +636,9 @@
             
             <tag> Java </tag>
             
-            <tag> Windows </tag>
-            
             <tag> Eclipse </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
@@ -680,6 +699,8 @@
             
             <tag> Google </tag>
             
+            <tag> Java </tag>
+            
             <tag> 前端 </tag>
             
             <tag> 游戏 </tag>
@@ -690,11 +711,9 @@
             
             <tag> JS </tag>
             
-            <tag> 后端 </tag>
-            
-            <tag> Java </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 后端 </tag>
             
             <tag> 博客 </tag>
             
@@ -715,9 +734,9 @@
       
         <tags>
             
-            <tag> Butterfly </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> Butterfly </tag>
             
         </tags>
       
@@ -940,13 +959,13 @@
             
             <tag> 游戏 </tag>
             
+            <tag> 摸鱼 </tag>
+            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
-            
-            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -988,13 +1007,13 @@
             
             <tag> 游戏 </tag>
             
+            <tag> 摸鱼 </tag>
+            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
-            
-            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -1017,13 +1036,13 @@
             
             <tag> 游戏 </tag>
             
+            <tag> 摸鱼 </tag>
+            
             <tag> HTML </tag>
             
             <tag> CSS </tag>
             
             <tag> JS </tag>
-            
-            <tag> 摸鱼 </tag>
             
         </tags>
       
@@ -1042,11 +1061,11 @@
       
         <tags>
             
-            <tag> Butterfly </tag>
-            
             <tag> hexo </tag>
             
             <tag> 前端 </tag>
+            
+            <tag> Butterfly </tag>
             
         </tags>
       
@@ -1067,9 +1086,9 @@
             
             <tag> hexo </tag>
             
-            <tag> 前端 </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1200,28 +1219,6 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="博主简介"><a href="#博主简介" class="headerlink" title="博主简介"></a>博主简介</h3><p> <strong><a href="https://haiyong.site/">海拥</a>，一枚99年的博主，<a href="https://haiyong.site/moyu">摸鱼</a>🐬网站创办于2021年8月，耗时一年打造，致力于为<a href="https://haiyong.site/chat">摸鱼家族</a>提供一个良好的学习（摸鱼）环境。拥有在线游戏、工具、动画案例等，各类计算机技术资源（前端、Java、Python等）无论是初学计算机技术的蒟蒻，还是久经沙场的大神，均可从中获益，也可以帮助他人，共同进步。是学习、摸鱼时理想的网站。</strong></p><p> <strong>全网粉丝12万+，一枚爱好计算机科学，求索于逻辑思维的同时不忘哲学和浪漫主义科学，<a href="https://haiyong.site/about">乐于分享技术与快乐的博主</a></strong></p><!-- <p align="center">    <a href="https://github.com/wanghao221"><img src="https://img.shields.io/badge/GitHub-%E5%AD%98%E5%82%A8%E5%BA%93-black.svg"         alt="GitHub" /></a>    <a href="https://juejin.cn/user/2040341402229751"><img src="https://img.shields.io/badge/juejin-%E6%8E%98%E9%87%91-blue.svg"         alt="掘金" /></a>    <a href="https://space.bilibili.com/63551025"><img src="https://img.shields.io/badge/bilibili-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-critical"         alt="哔哩哔哩" /></a>    <a href="https://bbs.csdn.net/forums/moyu"><img src="https://img.shields.io/badge/CSDN-%E6%91%B8%E9%B1%BC%E7%A4%BE%E5%8C%BA-yellow"         alt="moyu" /></a>    <a href="http://mtw.so/6tupxX"><img src="https://img.shields.io/badge/huawei-%E5%8D%8E%E4%B8%BA%E4%BA%91-ff69b4"         alt="huawei" /></a>    <a href="http://mtw.so/5CQXvv"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E6%B5%B7%E6%8B%A5-blueviolet"         alt="gong" /><img src="https://img.shields.io/badge/wechat-%E5%BE%AE%E4%BF%A1-blue" alt="wechat" /></a>    <a href="http://mtw.so/5I0VDR"><img src="https://img.shields.io/badge/nowcoder-%E7%89%9B%E5%AE%A2-green"         alt="牛客" /></a>    <a href="https://jinshuju.net/f/EgBFg7?x_field_1=%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9B%B4%E6%8A%95_0919"><img src="https://img.shields.io/badge/aliyun-%E9%98%BF%E9%87%8C%E4%BA%91%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99-yellowgreen"></a>    <a href="https://ke.study.163.com/topic/market/youxiUnity.html?outVendor=weixin_kol_fhq_youxi0y_0922_hy"><img src="https://img.shields.io/badge/neteast-%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%8D%E8%B4%B9%E8%AF%BE%E7%A8%8B-red"></a>    <a href="https://www.lanqiao.cn/courses/8605"><img src="https://img.shields.io/badge/lanqiao-%E8%93%9D%E6%A1%A528%E4%B8%AA%E6%A1%88%E4%BE%8B%E8%B6%A3%E5%AD%A6%E5%89%8D%E7%AB%AF-informational"></a></p> --><ul><li><strong><a href="https://haiyong.blog.csdn.net/"><font color="#e60101">CSDN原力计划作者，全栈领域优质创作者</font></a></strong></li><li><strong><a href="https://bbs.huaweicloud.com/community/usersnew/id_1628036118897599"><font color="#e66b6d">华为云享专家，HDZ核心组成员</font></a></strong></li><li><strong><a href="https://developer.aliyun.com/profile/expert/hzihvtuv57hlu"><font color="#e66d98">阿里云开发者社区技术博主、专家博主 </font></a></strong></li><li><strong><a href="https://blog.51cto.com/haiyongblog"><font color="#e66cc6">51CTO 专家博主、TOP红人，2022十大金星博主</font></a></strong></li><li><strong><a href="https://www.infoq.cn/u/haiyong"><font color="#cc6de6">InfoQ 写作社区 —— 签约作者</font></a></strong></li><li><strong><a href="https://www.lanqiao.cn/courses/8605"><font color="#9770e6">蓝桥云课平台 —— 签约作者</font></a></strong></li><li><strong><a href="https://juejin.cn/user/2040341402229751"><font color="#6d93e6">掘金2021年度人气作者 No.21</font></a></strong>  </li><li><strong><a href="https://space.bilibili.com/63551025"><font color="#6fcde6">bilibili 年度大会员</font></a></strong></li><li><strong><font color="#72e6b6"><a href="https://bbs.csdn.net/topics/603581677">2021爱智征文 一等奖</a>，<a href="https://bbs.csdn.net/topics/603972611">Go+ 征文大赛创作奖</a></font></strong></li><li><strong><a href="https://bbs.csdn.net/forums/moyu"><font color="#72e689">CSDN 摸鱼社区创建者，社区成员目前8.5W+</font></a></strong></li><li><strong><a href="https://www.zhihu.com/people/haiyongblog"><font color="#99e670">知乎科学技术领域答主</font></a></strong></li><li><strong><a href="https://www.nowcoder.com/profile/533772245"><font color="#cde670">牛客 Lv.7 红名大佬🐂</font></a></strong></li><li><strong><a href="https://github.com/wanghao221/moyu"><font color="#e6df72">GitHub 100个摸鱼游戏作者</font></a></strong></li><li><strong><a href="https://haiyong.site/"><font color="#e6c073">haiyong.site 网站站长</font></a></strong></li></ul><h3 id="联系作者"><a href="#联系作者" class="headerlink" title="联系作者"></a>联系作者</h3><ul><li>微信：<a href="https://haiyong.site/img/qrcode/weixin.png">wh18363</a>、QQ: 1836360247</li><li>微信群：<a href="https://app.yinxiang.com/fx/8aa8eb1b-7d45-4793-a160-b990d9da2e75">在此更新</a></li><li>QQ 全栈群：<a href="https://jq.qq.com/?_wv=1027&amp;k=SICM6psX">151836911</a>、QQ 前端群：<a href="https://jq.qq.com/?_wv=1027&amp;k=11IbjgdE">563210781</a></li></ul>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>摸鱼大军</title>
-      <link href="/chat/index.html"/>
-      <url>/chat/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="tag link"><a class="link-card" title="摸鱼游戏入口" href="https://code.haiyong.site/moyu/"><div class="left"><img src="https://haiyong.site/img/favicon.png"/></div><div class="right"><p class="text">摸鱼游戏入口</p><p class="url">https://code.haiyong.site/moyu/</p></div></a></div><div class="table-container"><table><thead><tr><th>微信摸鱼交流圈</th><th>QQ摸鱼交流圈</th><th>QQ前端交流圈</th></tr></thead><tbody><tr><td><img src="https://haiyong.site/img/qrcode/hai3.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209011.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209012.jpg" alt=""></td></tr></tbody></table></div><table style="border-collapse: collapse; min-width: 100%;">    <colgroup>        <col style="width: 175px;">        <col style="width: 509px;">    </colgroup>    <tbody>        <tr>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 175px; padding: 8px;">                <div>                    <span style="font-size: 12px; font-weight: bold;">几十G硬核资料：</span>                </div>                <div><span style="font-size: 12px; font-weight: bold;">扫码回复「资料」领取所有</span></div>                <div>                    <img ext="jpeg" src="https://haiyong.site/img/qrcode/gongzhonghao.png"                     width="180" height="180" class="en-media">                </div>            </td>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 509px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">1、PPT模板几千套、</span><span style="font-size: 12px; font-weight: bold;">简历模板一千套</span></div>                <div><span style="font-size: 12px; font-weight: bold;">2、</span><span style="font-size: 12px; font-weight: bold;">Java核心知识点大全面试真题资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">3、</span><span style="font-size: 12px; font-weight: bold;">Python全集(400集)</span></div>                <div><span style="font-size: 12px; font-weight: bold;">4、</span><span style="font-size: 12px; font-weight: bold;">2300套PHP建站源码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">5、</span><span style="font-size: 12px; font-weight: bold;">微信小程序入门资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">6、</span><span style="font-size: 12px; font-weight: bold;">SEO实战密码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">7、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">图灵程序丛书300本</span></div>                <div><span style="font-size: 12px; font-weight: bold;">8、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">6000册免费正版图书</span></div>                <div><span style="font-size: 12px; font-weight: bold;">9、</span><span style="font-size: 12px; font-weight: bold;">装机必备程序</span></div>                <div><span style="font-size: 12px; font-weight: bold;">10、</span><span style="font-size: 12px; font-weight: bold;">定期粉丝送书，抽送精美小礼品</span></div>                <div><br></div>            </td>        </tr>        <tr>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">个人网站</span><span style="font-size: 12px;">：</span></div>            </td>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 509px; padding: 8px;">                <div><a href="http://haiyong.site/" style="font-size: 10pt; color: rgb(0, 0, 0);">haiyong.site</a></div>            </td>        </tr>        <tr>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">摸鱼社区</span></div>            </td>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 509px; padding: 8px;">                <div><a href="https://bbs.csdn.net/forums/moyu">https://bbs.csdn.net/forums/moyu</a></div>            </td>        </tr>    </tbody></table>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>动画</title>
       <link href="/demo/index.html"/>
       <url>/demo/index.html</url>
@@ -1233,11 +1230,33 @@
     
     
     <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="博主简介"><a href="#博主简介" class="headerlink" title="博主简介"></a>博主简介</h3><p> <strong><a href="https://haiyong.site/">海拥</a>，一枚99年的博主，<a href="https://haiyong.site/moyu">摸鱼</a>🐬网站创办于2021年8月，耗时一年打造，致力于为<a href="https://haiyong.site/chat">摸鱼家族</a>提供一个良好的学习（摸鱼）环境。拥有在线游戏、工具、动画案例等，各类计算机技术资源（前端、Java、Python等）无论是初学计算机技术的蒟蒻，还是久经沙场的大神，均可从中获益，也可以帮助他人，共同进步。是学习、摸鱼时理想的网站。</strong></p><p> <strong>全网粉丝12万+，一枚爱好计算机科学，求索于逻辑思维的同时不忘哲学和浪漫主义科学，<a href="https://haiyong.site/about">乐于分享技术与快乐的博主</a></strong></p><!-- <p align="center">    <a href="https://github.com/wanghao221"><img src="https://img.shields.io/badge/GitHub-%E5%AD%98%E5%82%A8%E5%BA%93-black.svg"         alt="GitHub" /></a>    <a href="https://juejin.cn/user/2040341402229751"><img src="https://img.shields.io/badge/juejin-%E6%8E%98%E9%87%91-blue.svg"         alt="掘金" /></a>    <a href="https://space.bilibili.com/63551025"><img src="https://img.shields.io/badge/bilibili-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-critical"         alt="哔哩哔哩" /></a>    <a href="https://bbs.csdn.net/forums/moyu"><img src="https://img.shields.io/badge/CSDN-%E6%91%B8%E9%B1%BC%E7%A4%BE%E5%8C%BA-yellow"         alt="moyu" /></a>    <a href="http://mtw.so/6tupxX"><img src="https://img.shields.io/badge/huawei-%E5%8D%8E%E4%B8%BA%E4%BA%91-ff69b4"         alt="huawei" /></a>    <a href="http://mtw.so/5CQXvv"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E6%B5%B7%E6%8B%A5-blueviolet"         alt="gong" /><img src="https://img.shields.io/badge/wechat-%E5%BE%AE%E4%BF%A1-blue" alt="wechat" /></a>    <a href="http://mtw.so/5I0VDR"><img src="https://img.shields.io/badge/nowcoder-%E7%89%9B%E5%AE%A2-green"         alt="牛客" /></a>    <a href="https://jinshuju.net/f/EgBFg7?x_field_1=%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9B%B4%E6%8A%95_0919"><img src="https://img.shields.io/badge/aliyun-%E9%98%BF%E9%87%8C%E4%BA%91%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99-yellowgreen"></a>    <a href="https://ke.study.163.com/topic/market/youxiUnity.html?outVendor=weixin_kol_fhq_youxi0y_0922_hy"><img src="https://img.shields.io/badge/neteast-%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%8D%E8%B4%B9%E8%AF%BE%E7%A8%8B-red"></a>    <a href="https://www.lanqiao.cn/courses/8605"><img src="https://img.shields.io/badge/lanqiao-%E8%93%9D%E6%A1%A528%E4%B8%AA%E6%A1%88%E4%BE%8B%E8%B6%A3%E5%AD%A6%E5%89%8D%E7%AB%AF-informational"></a></p> --><ul><li><strong><a href="https://haiyong.blog.csdn.net/"><font color="#e60101">CSDN原力计划作者，全栈领域优质创作者</font></a></strong></li><li><strong><a href="https://bbs.huaweicloud.com/community/usersnew/id_1628036118897599"><font color="#e66b6d">华为云享专家，HDZ核心组成员</font></a></strong></li><li><strong><a href="https://developer.aliyun.com/profile/expert/hzihvtuv57hlu"><font color="#e66d98">阿里云开发者社区技术博主、专家博主 </font></a></strong></li><li><strong><a href="https://blog.51cto.com/haiyongblog"><font color="#e66cc6">51CTO 专家博主、TOP红人，2022十大金星博主</font></a></strong></li><li><strong><a href="https://www.infoq.cn/u/haiyong"><font color="#cc6de6">InfoQ 写作社区 —— 签约作者</font></a></strong></li><li><strong><a href="https://www.lanqiao.cn/courses/8605"><font color="#9770e6">蓝桥云课平台 —— 签约作者</font></a></strong></li><li><strong><a href="https://juejin.cn/user/2040341402229751"><font color="#6d93e6">掘金2021年度人气作者 No.21</font></a></strong>  </li><li><strong><a href="https://space.bilibili.com/63551025"><font color="#6fcde6">bilibili 年度大会员</font></a></strong></li><li><strong><font color="#72e6b6"><a href="https://bbs.csdn.net/topics/603581677">2021爱智征文 一等奖</a>，<a href="https://bbs.csdn.net/topics/603972611">Go+ 征文大赛创作奖</a></font></strong></li><li><strong><a href="https://bbs.csdn.net/forums/moyu"><font color="#72e689">CSDN 摸鱼社区创建者，社区成员目前8.5W+</font></a></strong></li><li><strong><a href="https://www.zhihu.com/people/haiyongblog"><font color="#99e670">知乎科学技术领域答主</font></a></strong></li><li><strong><a href="https://www.nowcoder.com/profile/533772245"><font color="#cde670">牛客 Lv.7 红名大佬🐂</font></a></strong></li><li><strong><a href="https://github.com/wanghao221/moyu"><font color="#e6df72">GitHub 100个摸鱼游戏作者</font></a></strong></li><li><strong><a href="https://haiyong.site/"><font color="#e6c073">haiyong.site 网站站长</font></a></strong></li></ul><h3 id="联系作者"><a href="#联系作者" class="headerlink" title="联系作者"></a>联系作者</h3><ul><li>微信：<a href="https://haiyong.site/img/qrcode/weixin.png">wh18363</a>、QQ: 1836360247</li><li>微信群：<a href="https://app.yinxiang.com/fx/8aa8eb1b-7d45-4793-a160-b990d9da2e75">在此更新</a></li><li>QQ 全栈群：<a href="https://jq.qq.com/?_wv=1027&amp;k=SICM6psX">151836911</a>、QQ 前端群：<a href="https://jq.qq.com/?_wv=1027&amp;k=11IbjgdE">563210781</a></li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>友人帐</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[<h3 id="申请友链请先添加本站链接哦"><a href="#申请友链请先添加本站链接哦" class="headerlink" title="申请友链请先添加本站链接哦"></a>申请友链请先添加本站链接哦</h3><p>侧边栏有我的联系方式，微信【wh18363】QQ【1836360247】</p><p>请确保您已添加本站为友链，并以以下格式留言：</p><ul><li>站点名字：海拥</li><li>站点地址：<a href="https://haiyong.site">https://haiyong.site</a></li><li>站点图片：<a href="https://haiyong.site/img/favicon.png">https://haiyong.site/img/favicon.png</a></li><li>站点简介：一个乐于分享技术与快乐的博主</li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>摸鱼大军</title>
+      <link href="/chat/index.html"/>
+      <url>/chat/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="tag link"><a class="link-card" title="摸鱼游戏入口" href="https://code.haiyong.site/moyu/"><div class="left"><img src="https://haiyong.site/img/favicon.png"/></div><div class="right"><p class="text">摸鱼游戏入口</p><p class="url">https://code.haiyong.site/moyu/</p></div></a></div><div class="table-container"><table><thead><tr><th>微信摸鱼交流圈</th><th>QQ摸鱼交流圈</th><th>QQ前端交流圈</th></tr></thead><tbody><tr><td><img src="https://haiyong.site/img/qrcode/hai3.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209011.jpg" alt=""></td><td><img src="https://haiyong.site/img/qrcode/2209012.jpg" alt=""></td></tr></tbody></table></div><table style="border-collapse: collapse; min-width: 100%;">    <colgroup>        <col style="width: 175px;">        <col style="width: 509px;">    </colgroup>    <tbody>        <tr>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 175px; padding: 8px;">                <div>                    <span style="font-size: 12px; font-weight: bold;">几十G硬核资料：</span>                </div>                <div><span style="font-size: 12px; font-weight: bold;">扫码回复「资料」领取所有</span></div>                <div>                    <img ext="jpeg" src="https://haiyong.site/img/qrcode/gongzhonghao.png"                     width="180" height="180" class="en-media">                </div>            </td>            <td rowspan="1" style="background-color: rgb(254, 222, 193); border: 1px solid rgb(253, 175, 105); width: 509px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">1、PPT模板几千套、</span><span style="font-size: 12px; font-weight: bold;">简历模板一千套</span></div>                <div><span style="font-size: 12px; font-weight: bold;">2、</span><span style="font-size: 12px; font-weight: bold;">Java核心知识点大全面试真题资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">3、</span><span style="font-size: 12px; font-weight: bold;">Python全集(400集)</span></div>                <div><span style="font-size: 12px; font-weight: bold;">4、</span><span style="font-size: 12px; font-weight: bold;">2300套PHP建站源码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">5、</span><span style="font-size: 12px; font-weight: bold;">微信小程序入门资料</span></div>                <div><span style="font-size: 12px; font-weight: bold;">6、</span><span style="font-size: 12px; font-weight: bold;">SEO实战密码</span></div>                <div><span style="font-size: 12px; font-weight: bold;">7、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">图灵程序丛书300本</span></div>                <div><span style="font-size: 12px; font-weight: bold;">8、</span><span style="font-size: 9pt; font-weight: bold;">PDF版</span><span                     style="font-size: 9pt; font-weight: bold;">6000册免费正版图书</span></div>                <div><span style="font-size: 12px; font-weight: bold;">9、</span><span style="font-size: 12px; font-weight: bold;">装机必备程序</span></div>                <div><span style="font-size: 12px; font-weight: bold;">10、</span><span style="font-size: 12px; font-weight: bold;">定期粉丝送书，抽送精美小礼品</span></div>                <div><br></div>            </td>        </tr>        <tr>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">个人网站</span><span style="font-size: 12px;">：</span></div>            </td>            <td rowspan="1" style="background-color: rgb(204, 215, 234); border: 1px solid rgb(142, 166, 208); width: 509px; padding: 8px;">                <div><a href="http://haiyong.site/" style="font-size: 10pt; color: rgb(0, 0, 0);">haiyong.site</a></div>            </td>        </tr>        <tr>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 175px; padding: 8px;">                <div><span style="font-size: 12px; font-weight: bold;">摸鱼社区</span></div>            </td>            <td style="background-color: rgb(255, 230, 151); border: 1px solid rgb(255, 211, 70); width: 509px; padding: 8px;">                <div><a href="https://bbs.csdn.net/forums/moyu">https://bbs.csdn.net/forums/moyu</a></div>            </td>        </tr>    </tbody></table>]]></content>
       
     </entry>
     
